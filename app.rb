@@ -6,9 +6,12 @@ class App < Sinatra::Base
   end
 
   post '/reverse' do
-    original_string = params["string"]
-    erb :reversed
-  end
+  original_string = params["string"]
+  @reversed_string = original_string.reverse
+  #the instance variable saves the value to view also
+ 
+  erb :reversed
+end
 
   get '/friends' do
     # Write your code here!
